@@ -1,10 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from "../components/InputComponent"
 import { Button } from "../components/Button"
 import axios from 'axios'
 
 export function AddScheme() {
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) { 
+            alert("Log in to add scheme");
+            navigate("/admin")
+        }
+    }, [])
+
     const [schemeName, setSchemeName] = useState('')
     const [schemeId, setSchemeId] = useState(0)
     const [minAge, setMinAge] = useState(0);
@@ -38,14 +47,12 @@ export function AddScheme() {
     }
 
     async function handleSubmit() {
-        console.log("hello");
         try {
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:3000/admin/addScheme',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/addScheme',
                 headers: {
-                    "username": "admin1@gmail.com",
-                    "password": "adminpass1@gmail.com"
+                    Authorization: localStorage.getItem("token")
                 },
                 data: {
                     schemeName: schemeName,

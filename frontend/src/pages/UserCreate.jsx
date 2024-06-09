@@ -48,7 +48,7 @@ export function UserCreate() {
         try {
             const response = await axios({
                 method: "post",
-                url: "http://localhost:3000/user/create",
+                url: "https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/create",
                 data: {
                     username: username,
                     password: password,
@@ -65,7 +65,6 @@ export function UserCreate() {
             if (response.data.message === 'Signup successful. You can sign in now') {
                 navigate("/user");
             }
-
         } catch(e) {
             alert(e);
         }

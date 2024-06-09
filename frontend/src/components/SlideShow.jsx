@@ -11,9 +11,9 @@ export function SlideShow({images, interval}) {
         return () => clearInterval(intervalId);
     }, [images.length, interval])
 
-    return <div className="relative flex justify-center w-full">
+    return <div className="relative flex justify-center w-full h-full">
         {images.map((image, index) => {
-           return <img src={image} key={index} alt={`Slide ${index}`} className={`absolute  w-full h-56 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} />
+           return <img src={image} key={index} alt={`Slide ${index}`} className={`absolute w-full h-full transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} />
         })}
     </div>
 }

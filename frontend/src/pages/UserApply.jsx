@@ -10,20 +10,25 @@ export function UserApply() {
   const [schemeId, setSchemeId] = useState('')
   const [schemes, setSchemes] = useState([]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+
+    const username = localStorage.getItem('token');
+    if (!username) {
+      alert("Sign in to apply to the schemes");
+      navigate("/user")
+    }
+
     async function getSchemes() {
       const response = await axios({
         method: 'get',
-        url: 'http://localhost:3000/schemes/schemes'
+        url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/scheme/schemes'
       })
-      setSchemes(response.data)
+      setSchemes(response.data.schemes);
     }
-
     getSchemes();
-    console.log(schemes)
-  })
-
-  const navigate = useNavigate();
+  }, [])
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -37,24 +42,24 @@ export function UserApply() {
     try {
       const response = await axios({
         method: 'post',
-        url: 'http://localhost:3000/user/apply',
+        url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/apply',
         data: {
           username: username,
           schemeId: schemeId
+        },
+        headers: {
+          Authorization: localStorage.getItem('token')
         }
       })
       if (response.data.message === 'Application submitted') {
         alert(response.data.message);
-        navigate("/user");
+        navigate("/");
       } else {
         alert(response.data.message);
       }
     } catch(e) {
       alert(e);
     }
-    
-
-    
   }
 
   return (

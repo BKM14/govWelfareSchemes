@@ -15,6 +15,6 @@ export function About() {
                 in March 2012. This move aims to enhance coordination with other ministries, align with international standards, 
                 and address the diverse needs of persons with disabilities effectively.
             </p>
-        </div>
+        </div>  
     </>
 }

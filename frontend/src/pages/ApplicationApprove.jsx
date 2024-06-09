@@ -1,17 +1,31 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export function ApproveApplication() {
     const [unApprovedApplications, setUnApprovedApplications] = useState([]);
-
+    const navigate = useNavigate();
     useEffect(() => {
+
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Log in to see the dashboard")
+            navigate("/admin")
+        }
+
         getUnapprovedApplications();
     }, []);
 
     async function getUnapprovedApplications() {
         try {
-            const response = await axios.get('http://localhost:3000/application/unApprovedApplications');
-            setUnApprovedApplications(response.data);
+            const response = await axios({
+                method: 'get',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/application/unApprovedApplications',
+                headers: {
+                    Authorization: localStorage.getItem('token')
+                }
+            });
+            setUnApprovedApplications(response.data.applications);
         } catch (error) {
             console.error('Error fetching unapproved users:', error);
         }
@@ -19,8 +33,15 @@ export function ApproveApplication() {
 
     async function approveApplication(username, schemeId) {
         try {
-            await axios.put('http://localhost:3000/admin/approveApplication', { username, schemeId });
-            alert("Application approved succesfully");
+            const response = await axios({
+                method: 'put',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/approveApplication',
+                data: {username: username, schemeId: schemeId},
+                headers: {
+                    Authorization: localStorage.getItem("token")
+                }
+            });
+            alert(response.data.message);
             getUnapprovedApplications();
         } catch (error) {
             console.error('Error approving user:', error);
@@ -31,10 +52,13 @@ export function ApproveApplication() {
         try {
             const response = await axios({
                 method: 'delete',
-                url: 'http://localhost:3000/admin/deleteApplication',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/deleteApplication',
                 data: {
                     username: username,
                     schemeId: schemeId
+                },
+                headers: {
+                    Authorization: localStorage.getItem("token")
                 }
             })
             alert(response.data.message);

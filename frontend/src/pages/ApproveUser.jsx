@@ -1,16 +1,29 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export function ApproveUser() {
     const [unApprovedUsers, setUnApprovedUsers] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Log in to approve users")
+            navigate("/admin")
+        }
         getUnapprovedUsers();
     }, []);
 
     async function getUnapprovedUsers() {
         try {
-            const response = await axios.get('http://localhost:3000/user/unApprovedUsers');
+            const response = (await axios({
+                method: 'get',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/unApprovedUsers',
+                headers: {
+                    Authorization: localStorage.getItem('token')
+                }
+            }));
             setUnApprovedUsers(response.data);
         } catch (error) {
             console.error('Error fetching unapproved users:', error);
@@ -19,7 +32,14 @@ export function ApproveUser() {
 
     async function approveUser(username) {
         try {
-            await axios.put('http://localhost:3000/admin/approveAccount', { username });
+            await axios({
+                method: 'put',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/approveAccount',
+                data: {username: username},
+                headers: {
+                    Authorization: localStorage.getItem("token")
+                }
+            });
             alert("User approved succesfully");
             getUnapprovedUsers();
         } catch (error) {
