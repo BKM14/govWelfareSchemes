@@ -21,14 +21,14 @@ export function UserLogin() {
     async function handleSubmit() {
         const response = await axios({
             method: 'post',
-            url: 'http://localhost:3000/user/signin',
+            url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/signin',
             data: {
                 username: email,
                 password: password
             }
         })
-        console.log(response.data.message);
         if (response.data.message === 'login successful') {
+            localStorage.setItem('token', response.data.token)
             alert(response.data.message);
             navigate("/userdash");
         } else {

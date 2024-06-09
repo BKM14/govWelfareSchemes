@@ -8,20 +8,23 @@ export function DeleteScheme() {
         const getSchemes = async () => {
             const response = await axios({
                 method: "get",
-                url: "http://localhost:3000/schemes/schemes",
+                url: "https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/scheme/schemes",
             });
-            setSchemes(response.data)
+            setSchemes(response.data.schemes)
         };
         getSchemes()
-    })
+    }, [])
 
     const handleDelete = async(schemeId) => {
         try {
             const response = await axios({
                 method: 'delete',
-                url: 'http://localhost:3000/admin/deleteScheme',
+                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/deleteScheme',
                 data: {
                     schemeId: schemeId
+                },
+                headers: {
+                    Authorization: localStorage.getItem('token')
                 }
             })
             alert(response.data.message);
@@ -29,7 +32,6 @@ export function DeleteScheme() {
             alert(e);
         }
     }
-
 
     return <div className="flex flex-col justify-center align-center bg-slate-400 border p-32">
         {
