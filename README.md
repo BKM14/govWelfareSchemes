@@ -1,4 +1,4 @@
-Site is live [here](https://gov-welfare-schemes-2w52e4355-bkm14s-projects.vercel.app/)
+Site is live [here](https://gov-welfare-schemes.vercel.app/)
 
 ### Government Schemes Awareness
 This is a full stack website built using the **MERN** stack.
