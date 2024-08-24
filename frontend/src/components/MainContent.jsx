@@ -5,7 +5,7 @@ import { SlideShow } from "./SlideShow"
 
 export function MainContent({ MainContentData }) {
     return (
-        <div className="bg-slate-100 flex flex-col md:mx-4 md:my-36 md:flex-row font-montserrat">
+        <div className="bg-slate-100 flex flex-col md:mx-4 md:my-24 md:flex-row font-montserrat">
             <div className="w-full md:w-1/2 p-1 flex">
                 <div className="mt-1.5 flex-1 hidden md:block">
                     <SlideShow images={images} interval={5000}></SlideShow>
