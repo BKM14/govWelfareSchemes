@@ -48,7 +48,7 @@ export function AdminLogin() {
             <div className="text-black font-poppins font-semibold text-6xl mt-4 text-center">Admin Login</div>
             <div className="font-poppins text-black w-full my-3">
                 <InputComponent label={"Email"} placeholder={"johndoe@gmail.com"} value={username} onChange={handleEmailChange}></InputComponent>
-                <InputComponent label={"Password"} placeholder={"*******"} value={password} onChange={handlePasswordChange}></InputComponent>
+                <InputComponent type="password" label={"Password"} placeholder={"*******"} value={password} onChange={handlePasswordChange}></InputComponent>
             </div>
             <div className="flex justify-center items-center">
                 <Button label={"Login"} onClick={handleSubmit} loading={loading}></Button>

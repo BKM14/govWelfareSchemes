@@ -79,7 +79,7 @@ export function UserCreate() {
                 <div className="text-black font-poppins font-semibold text-6xl my-4">Sign up</div>
                 <div className="font-montserrat grid grid-cols-1 md:grid-cols-2 gap-x-6 my-4">
                     <InputComponent label={"Username"} placeholder={"johndoe@gmail.com"} value={username} onChange={handleUsernameChange}></InputComponent>
-                    <InputComponent label={"Password"} placeholder={"*******"} value={password} onChange={handlePasswordChange}></InputComponent>
+                    <InputComponent type="password" label={"Password"} placeholder={"*******"} value={password} onChange={handlePasswordChange}></InputComponent>
                     <InputComponent label={"Name"} placeholder={"John"} value={name} onChange={handleNameChange}></InputComponent>
                     <InputComponent label={"Birth Day"} placeholder={"14"} value={birthDay} onChange={handleBirthDayChange}></InputComponent>
                     <InputComponent label={"Birth Month"} placeholder={"August"} value={birthMonth} onChange={handleBirthMonthChange}></InputComponent>

@@ -51,7 +51,7 @@ export function UserLogin() {
                 <div className="text-black font-poppins font-semibold text-6xl mt-4">Login</div>
                 <div className="font-poppins text-black my-2">
                     <InputComponent label={"Email"} placeholder={"johndoe@gmail.com"} onChange={handleEmailChange}></InputComponent>
-                    <InputComponent label={"Password"} placeholder={"*******"} onChange={handlePasswordChange}></InputComponent>
+                    <InputComponent type="password" label={"Password"} placeholder={"*******"} onChange={handlePasswordChange}></InputComponent>
                 </div>
                 <Button label={"Login"} onClick={handleSubmit} loading={loading}></Button>
                 <BottomWarning label1={"Don't have an account? "} to={"/create"} toLabel={"Create one"}></BottomWarning>
