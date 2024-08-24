@@ -41,7 +41,6 @@ export const FooterData = [
     {name: "Accessibility Statement", address: "/accessibility"},
     {name: "Help", address: "/help"},
     {name: "Privacy Policy", address: "/privacy"},
-    {name: "Hyperlinking Policy", address: "/hyperlinking"},
     {name: "Contact Us", address: "/contact"},
     {name: "Copyright Policy", address: "/copyright"},
     {name: "Careers", address: "/careers"},
