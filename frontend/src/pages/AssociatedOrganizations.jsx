@@ -1,7 +1,7 @@
 export function AssociatedOrganizations() {
     return <div>
-        <p className='font-bold text-lg text-center'>Associated Organizations</p>
-        <div className="p-10 font-poppins mb-20">
+        <p className='font-bold text-lg md:text-xl lg:text-3xl mt-3 text-center'>Associated Organizations</p>
+        <div className="p-10 font-poppins mb-20 text-md md:text-lg lg:text-xl">
             <li>
             Organization A focuses on empowering marginalized communities through education, healthcare, 
             and vocational training programs.

@@ -99,9 +99,9 @@ export const subPageData = {
     contact : {
         heading : "Contact Us",
         content : `Thank you for visiting the Social Welfare Department of the Government of India's website. If you have any questions, feedback, or inquiries regarding our services and programs, we are here to assist you. Please find below the various ways you can get in touch with us:
-        Helpline: For immediate assistance and inquiries, please call our helpline at [Helpline Number]. Our dedicated team is available [Operating Hours] to address your concerns and provide guidance on accessing our services.
-        Email: You can also reach out to us via email at [Email Address]. Whether you have questions about eligibility criteria, application procedures, or general inquiries, our team will respond to your email promptly.
-        Visit Us: If you prefer face-to-face assistance, you can visit your nearest Social Welfare Department office. Our knowledgeable staff will be happy to assist you with any queries and provide support in accessing our programs and services.`
+        Helpline: For immediate assistance and inquiries, please call our helpline at 1800-123-4567. Our dedicated team is available Monday to Friday, 9:00 AM to 6:00 PM to address your concerns and provide guidance on accessing our services.
+        Email: You can also reach out to us via email at support@socialwelfare.gov.in. Whether you have questions about eligibility criteria, application procedures, or general inquiries, our team will respond to your email promptly.
+        Visit Us: If you prefer face-to-face assistance, you can visit your nearest Social Welfare Department office. Our knowledgeable staff will be happy to assist you with any queries and provide support in accessing our programs and services. The main office is located at 123 Welfare Avenue, New Delhi, 110001.`
     },
     copyright : {
         heading : "Copyright Policy",
@@ -158,29 +158,60 @@ export const subPageData = {
         Professional Development: We believe in investing in our employees' growth and development. Benefit from training programs, mentorship opportunities, and career advancement paths to enhance your skills and progress in your career.
         We thank all applicants for their interest in joining our team. Only candidates selected for an interview will be contacted.
         Join us in making a difference and building a brighter future for India. Start your journey with the Social Welfare Department of the Government of India today!
-        For more information, please contact [Contact Information].`
+        For more information, please contact 1800-987-6543..`
     },
     telephone : {
         heading : "Telephone Directory",
         content : `
-        General Enquiries:
-        
-        Main Office: [Main Office Phone Number]
-        Helpline: [Helpline Phone Number]
-        Email: [General Email Address]
-        Department Heads:
-        
-        Director: [Director's Name] - [Director's Phone Number]
-        Deputy Director: [Deputy Director's Name] - [Deputy Director's Phone Number]
-        Administrative Offices:
-        
-        Human Resources: [HR Manager's Name] - [HR Phone Number]
-        Finance Department: [Finance Manager's Name] - [Finance Phone Number]
-        IT Department: [IT Manager's Name] - [IT Phone Number]
-        Program Managers:
-        
-        Social Programs: [Program Manager's Name] - [Program Manager's Phone Number]
-        Healthcare Initiatives: [Program Manager's Name] - [Program Manager's Phone Number]
-        Education and Training: [Program Manager's Name] - [Program Manager's Phone Number]`
+        For general inquiries, please contact our Main Office at 1800-555-1001 or our Helpline at 1800-555-1002. You can also reach us via email at info@socialwelfare.gov.in. Our department heads are here to assist you: Director Anil Kumar 
+        can be reached at 1800-555-2001, and Deputy Director Priya Sharma is available at 1800-555-2002. For administrative concerns, contact Human Resources managed by Rakesh Mehta at 1800-555-3001, the Finance Department headed by Suman 
+        Verma at 1800-555-3002, or the IT Department under Nikhil Singh at 1800-555-3003. If you have specific questions about our programs, you can reach Kavita Desai, our Social Programs Manager, at 1800-555-4001, Rahul Iyer, who manages 
+        Healthcare Initiatives, at 1800-555-4002, or Sneha Patil, our Education and Training Program Manager, at 1800-555-4003.`
     },
+    associated: {
+        heading: "Associated Organizations",
+        content: `
+        <li>
+            Organization A focuses on empowering marginalized communities through education, healthcare, 
+            and vocational training programs.
+            </li>
+            <li>Organization B is dedicated to combating homelessness and poverty by providing shelter, food assistance, 
+            and job placement services.
+            </li>
+            <li>Organization C advocates for child welfare and family support, offering 
+                adoption services, foster care programs, and counseling for at-risk youth.
+            </li>
+            <li>
+            Organization D promotes environmental conservation and sustainability through community engagement, 
+            eco-friendly initiatives, and renewable energy projects.
+            </li>`
+    },
+    about: {
+        heading: "About us",
+        content: `In 1985-86, the Ministry of Welfare split into the Department of Women and Child Development and the 
+                Department of Welfare, incorporating divisions from the Ministry of Home Affairs and Ministry of Law. 
+                Renamed as the Ministry of Social Justice & Empowerment in 1998, it further evolved with the formation 
+                of the Ministry of Tribal Affairs in 1999 and the separation of the Minorities Division and Wakf Unit in 
+                2007. Despite disability being a state subject, the Indian government has been actively involved, operating 
+                national institutes, regional centers, and funding NGOs for rehabilitation services. It is also committed 
+                to international agreements like the UN Convention on the Rights of Persons with Disabilities. Acknowledging 
+                the need for focused attention on disability issues, the government decided to establish a separate Department 
+                of Disability Affairs within the Ministry of Social Justice & Empowerment, a decision endorsed by the President 
+                in March 2012. This move aims to enhance coordination with other ministries, align with international standards, 
+                and address the diverse needs of persons with disabilities effectively.
+        `
+    },
+    overview: {
+        heading: "Brief Overview",
+        content: `
+        The Department of Social Justice & Empowerment is entrusted with the empowerment of the disadvantaged and marginalized sections of the society. The target groups of the Ministry are:
+        Scheduled Castes
+        Other Backward Classes
+        Senior Citizens
+        Victims of Substance Abuse
+        Beggars
+        Transgenders
+        Denotified, Nomadic and Semi-Nomadic tribes
+        The Ministry has been implementing various programmes/schemes for social, educational and economic development of the target groups. As a result there has been considerable improvement in the welfare of these groups.`
+    }
 }

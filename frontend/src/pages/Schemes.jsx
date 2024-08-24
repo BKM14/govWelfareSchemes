@@ -35,9 +35,9 @@ export function Schemes() {
     
 
     return <div>
-        <div className="flex flex-col pt-5 items-center font-poppins h-screen font-bold text-white bg-slate-200">
+        <div className="flex flex-col pt-5 items-center font-poppins h-full font-bold text-white ">
             <div>
-                <input type="text" placeholder="Search" className="border-2 rounded-md text-black pl-6 m-2 placeholder:text-black hover:p-7 duration-300 hover:border-black hover:text-xl border-green-800" style={{background: 'url(https://www.freeiconspng.com/uploads/search-icon-png-21.png)', backgroundSize: "18px", backgroundRepeat: "no-repeat", backgroundPosition: "left", backgroundPositionX: "1%"}} value={searchQuery} onChange={handleInputChange}/>
+                <input type="text" placeholder="Search" className="border-2 rounded-md text-black pl-6 m-2 placeholder:text-black hover:p-7 duration-200 hover:border-black hover:text-xl border-green-800" style={{background: 'url(https://www.freeiconspng.com/uploads/search-icon-png-21.png)', backgroundSize: "18px", backgroundRepeat: "no-repeat", backgroundPosition: "left", backgroundPositionX: "1%"}} value={searchQuery} onChange={handleInputChange}/>
             </div>
             <div className="text-3xl m-3 font-montserrat text-black font-medium">List of Available schemes</div>
             <div className="m-3">
