@@ -71,10 +71,10 @@ export function UserCreate() {
         
     }
     return <div>
-        <div className="bg-cover flex justify-center" style={{backgroundImage: `url(https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg)`}}>
-            <div className="border rounded-md border-white w-96 flex flex-col items-center my-2 p-2">
-                <div className="text-white font-poppins font-semibold text-6xl my-4">Sign up</div>
-                <div className="font-montserrat">
+        <div className="flex justify-center my-28">
+            <div className="border-2 rounded-md border-black flex flex-col items-center my-2 p-2 w-4/5 md:w-1/3">
+                <div className="text-black font-poppins font-semibold text-6xl my-4">Sign up</div>
+                <div className="font-montserrat grid grid-cols-1 md:grid-cols-2 gap-x-2">
                     <InputComponent label={"Username"} placeholder={"johndoe@gmail.com"} value={username} onChange={handleUsernameChange}></InputComponent>
                     <InputComponent label={"Password"} placeholder={"*******"} value={password} onChange={handlePasswordChange}></InputComponent>
                     <InputComponent label={"Name"} placeholder={"John"} value={name} onChange={handleNameChange}></InputComponent>
@@ -83,9 +83,9 @@ export function UserCreate() {
                     <InputComponent label={"Birth Year"} placeholder={"2004"} value={birthYear} onChange={handleBirthYearChange}></InputComponent>
                     <InputComponent label={"Area of Residence"} placeholder={"Vijaynagar"} value={areaOfResidence} onChange={handleAreaOfResidenceChange}></InputComponent>
                     <InputComponent label={"Gender"} placeholder={"Male"} value={gender} onChange={handleGenderChange}></InputComponent>
-                    <Button label={"Submit"} onClick={handleSubmit}></Button>
-                    <BottomWarning label1={"Already have an account?"} to={"/user"} toLabel={"Sign in"}></BottomWarning>
                 </div>
+                <Button label={"Submit"} onClick={handleSubmit}></Button>
+                <BottomWarning label1={"Already have an account? "} to={"/user"} toLabel={"Sign in"}></BottomWarning>
             </div>
         </div>       
     </div>

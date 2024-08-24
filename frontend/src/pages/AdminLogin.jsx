@@ -35,10 +35,10 @@ export function AdminLogin() {
     }
 
     return <div>
-        <div className="bg-cover h-screen flex justify-center items-center" style={{backgroundImage: `url(https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg)`}}>
-            <div className="border rounded-md border-white w-96 h-96 flex flex-col items-center">
-                <div className="text-white font-poppins font-semibold text-6xl mt-4">Admin Login</div>
-                <div className="font-poppins text-white">
+        <div className="flex justify-center my-32">
+        <div className="border-2 rounded-md border-black p-6 flex flex-col items-center">
+                <div className="text-black font-poppins font-semibold text-6xl mt-4 text-center">Admin Login</div>
+                <div className="font-poppins text-black">
                     <InputComponent label={"Email"} placeholder={"johndoe@gmail.com"} value={username} onChange={handleEmailChange}></InputComponent>
                     <InputComponent label={"Password"} placeholder={"*******"} value={password} onChange={handlePasswordChange}></InputComponent>
                 </div>
