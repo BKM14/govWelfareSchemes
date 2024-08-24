@@ -5,7 +5,7 @@ export function TopBar() {
           <div className="flex items-center">
             <div className="w-16 mr-2">
               <img
-                src="http://tinyurl.com/yzxxt5dc"
+                src="goi.jpg"
                 alt="Department Logo"
               />
             </div>
