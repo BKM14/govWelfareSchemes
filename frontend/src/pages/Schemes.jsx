@@ -12,8 +12,8 @@ export function Schemes() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await axios.get('https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/scheme/schemes');
+            try {                
+                const response = await axios.get(import.meta.env.VITE_BASE_URL + 'scheme/schemes');
                 if (searchQuery == '') {
                     setSchemes(response.data.schemes);
                 } else {

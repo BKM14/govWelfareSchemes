@@ -21,7 +21,7 @@ export function AdminLogin() {
     async function handleSubmit() {
         const response = await axios({
             method: 'post',
-            url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/signin',
+            url: import.meta.env.VITE_BASE_URL + 'admin/signin',
             data: {
                 username: username,
                 password: password

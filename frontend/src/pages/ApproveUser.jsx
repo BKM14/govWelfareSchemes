@@ -19,7 +19,7 @@ export function ApproveUser() {
         try {
             const response = (await axios({
                 method: 'get',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/unApprovedUsers',
+                url: import.meta.env.VITE_BASE_URL + 'user/unApprovedUsers',
                 headers: {
                     Authorization: localStorage.getItem('token')
                 }
@@ -34,7 +34,7 @@ export function ApproveUser() {
         try {
             await axios({
                 method: 'put',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/approveAccount',
+                url: import.meta.env.VITE_BASE_URL + 'admin/approveAccount',
                 data: {username: username},
                 headers: {
                     Authorization: localStorage.getItem("token")

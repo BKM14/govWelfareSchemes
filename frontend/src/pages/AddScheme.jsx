@@ -50,7 +50,7 @@ export function AddScheme() {
         try {
             const response = await axios({
                 method: 'post',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/addScheme',
+                url: import.meta.env.VITE_BASE_URL + 'admin/addScheme',
                 headers: {
                     Authorization: localStorage.getItem("token")
                 },
