@@ -6,9 +6,10 @@ import { TableForApply } from "../components/TableForApply";
 
 
 export function UserApply() {
-  const [username, setUsername] = useState('')
-  const [schemeId, setSchemeId] = useState('')
+  const [username, setUsername] = useState('');
+  const [schemeId, setSchemeId] = useState('');
   const [schemes, setSchemes] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ export function UserApply() {
     const username = localStorage.getItem('token');
     if (!username) {
       alert("Sign in to apply to the schemes");
-      navigate("/user")
+      navigate("/user");
     }
 
     async function getSchemes() {
@@ -40,6 +41,7 @@ export function UserApply() {
 
   async function handleSubmit() {
     try {
+      setLoading(true);
       const response = await axios({
         method: 'post',
         url: import.meta.env.VITE_BASE_URL +  '/user/apply',
@@ -58,13 +60,15 @@ export function UserApply() {
         alert(response.data.message);
       }
     } catch(e) {
-      alert(e);
+      alert("Error: " + e);
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
-    <div className="flex justify-around">
-      <div className="w-1/3 mx-auto border-2 border-black p-2 rounded-md">
+    <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="md:w-2/3 my-4 mx-auto border-2 border-solid border-black p-2 rounded-md">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-800">Apply for Welfare Scheme</h2>
           <p className="mt-2 text-sm text-gray-600">Please fill out the form below to apply.</p>
@@ -80,13 +84,21 @@ export function UserApply() {
         <div>
         <button
           type="submit"
-          className="w-full py-3 bg-indigo-600 rounded-md text-white font-semibold hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700"
+          disabled={loading}
+          className=" w-full py-3 bg-indigo-600 rounded-md text-white font-semibold hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700 flex items-center justify-center"
           onClick={handleSubmit}>
-          Apply Now
+          {loading ? (
+            <>
+              <div className="spinner-border animate-spin inline-block w-4 h-4 border-4 border-t-white border-indigo-500 rounded-full mr-2"></div>
+              Loading
+            </>
+          ) : (
+            "Apply now"
+          )}
         </button>
         </div>
       </div>
-      <div className="mr-36 flex flex-col justify-center align-center">
+      <div className="mx-auto p-2">
         <TableForApply tableData={schemes}>
         </TableForApply>
       </div>

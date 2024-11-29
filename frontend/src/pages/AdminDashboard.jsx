@@ -1,6 +1,5 @@
 import { useEffect } from "react"
-import { Button } from "../components/Button"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function AdminDashboard() {
     const navigate = useNavigate();
@@ -13,16 +12,16 @@ export function AdminDashboard() {
         }
     }, [])
 
-    return <div className="flex justify-between">
-        <div className="w-1/2 bg-slate-500 border-black border-2 py-16 flex justify-center align-center flex-col">
+    return <div className="flex flex-col items-center md:flex-row md:justify-center">
+        <div className="w-4/5 md:w-1/2 bg-slate-200 border-black border-2 py-16 flex justify-center items-center flex-col">
             <p className="text-center text-3xl">Add/Delete a scheme</p>
-            <Button label={"Add a scheme"} to={"/addscheme"}></Button>
-            <Button label={"Delete a scheme"} to={"/delete"}></Button>
+            <Link to={"/addscheme"} className="w-4/5 md:w-1/2 border-2 border-solid m-3 hover:bg-green-500 duration-200 font-bold border-black text-center p-4 bg-slate-300">Add a scheme</Link>
+            <Link to={"/delete"} className="w-4/5 md:w-1/2 border-2 border-solid m-3 hover:bg-green-500 duration-200 font-bold border-black text-center p-4 bg-slate-300">Delete a scheme</Link>
         </div>
-        <div className="w-1/2 bg-slate-500 border-black border-2 py-16 flex justify-center align-center flex-col">
+        <div className="w-4/5 md:w-1/2 bg-slate-500 border-black border-2 py-16 flex justify-center items-center flex-col mt-4 md:mt-0">
             <p className="text-center text-3xl"> Users</p>
-            <Button label={"Approve users"} to={"/approve"}></Button>
-            <Button label={"Approve applications"} to={"/approveApplication"}></Button>
+            <Link to={"/approve"} className="w-4/5 md:w-1/2 border-2 border-solid m-3 hover:bg-green-500 duration-200 font-bold border-black text-center p-4 bg-slate-300">Approve users</Link>
+            <Link to={"/approveApplication"} className="w-4/5 md:w-1/2 border-2 border-solid m-3 hover:bg-green-500 duration-200 font-bold border-black text-center p-4 bg-slate-300">Approve applications</Link>
         </div>
     </div>
 }
