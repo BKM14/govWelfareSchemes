@@ -20,6 +20,14 @@ export function UserLogin() {
     }
 
     async function handleSubmit() {
+        const response = await axios({
+            method: 'post',
+            url: import.meta.env.VITE_BASE_URL + 'user/signin',
+            data: {
+                username: email,
+                password: password
+            }
+        })
         try {
             setLoading(true);
             const response = await axios({

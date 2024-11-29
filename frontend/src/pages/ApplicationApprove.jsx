@@ -20,7 +20,7 @@ export function ApproveApplication() {
         try {
             const response = await axios({
                 method: 'get',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/application/unApprovedApplications',
+                url: import.meta.env.VITE_BASE_URL + 'application/unApprovedApplications',
                 headers: {
                     Authorization: localStorage.getItem('token')
                 }
@@ -35,7 +35,7 @@ export function ApproveApplication() {
         try {
             const response = await axios({
                 method: 'put',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/approveApplication',
+                url: import.meta.env.VITE_BASE_URL + 'admin/approveApplication',
                 data: {username: username, schemeId: schemeId},
                 headers: {
                     Authorization: localStorage.getItem("token")
@@ -52,7 +52,7 @@ export function ApproveApplication() {
         try {
             const response = await axios({
                 method: 'delete',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/deleteApplication',
+                url: import.meta.env.VITE_BASE_URL + 'admin/deleteApplication',
                 data: {
                     username: username,
                     schemeId: schemeId

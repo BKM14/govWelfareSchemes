@@ -8,7 +8,7 @@ export function DeleteScheme() {
         const getSchemes = async () => {
             const response = await axios({
                 method: "get",
-                url: "https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/scheme/schemes",
+                url: import.meta.env.VITE_BASE_URL + "scheme/schemes",
             });
             setSchemes(response.data.schemes)
         };
@@ -19,7 +19,7 @@ export function DeleteScheme() {
         try {
             const response = await axios({
                 method: 'delete',
-                url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/admin/deleteScheme',
+                url: import.meta.env.VITE_BASE_URL + 'admin/deleteScheme',
                 data: {
                     schemeId: schemeId
                 },

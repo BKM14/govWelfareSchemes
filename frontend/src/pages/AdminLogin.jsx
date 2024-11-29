@@ -20,6 +20,14 @@ export function AdminLogin() {
     }
 
     async function handleSubmit() {
+        const response = await axios({
+            method: 'post',
+            url: import.meta.env.VITE_BASE_URL + 'admin/signin',
+            data: {
+                username: username,
+                password: password
+            }
+        })
         try {
             setLoading(true);
             const response = await axios({

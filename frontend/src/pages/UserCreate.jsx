@@ -49,7 +49,7 @@ export function UserCreate() {
             setLoading(true);
             const response = await axios({
                 method: "post",
-                url: "https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/create",
+                url: import.meta.env.VITE_BASE_URL + "user/create",
                 data: {
                     username: username,
                     password: password,

@@ -24,7 +24,7 @@ export function UserApply() {
     async function getSchemes() {
       const response = await axios({
         method: 'get',
-        url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/scheme/schemes'
+        url: import.meta.env.VITE_BASE_URL +  'scheme/schemes'
       })
       setSchemes(response.data.schemes);
     }
@@ -44,7 +44,7 @@ export function UserApply() {
       setLoading(true);
       const response = await axios({
         method: 'post',
-        url: 'https://gov-schemes-awareness.balajikrishnamurthy2004.workers.dev/user/apply',
+        url: import.meta.env.VITE_BASE_URL +  '/user/apply',
         data: {
           username: username,
           schemeId: schemeId
