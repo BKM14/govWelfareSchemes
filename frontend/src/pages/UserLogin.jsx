@@ -26,6 +26,8 @@ export function UserLogin() {
             data: {
                 username: email,
                 password: password
+            }
+        })
         try {
             setLoading(true);
             const response = await axios({
