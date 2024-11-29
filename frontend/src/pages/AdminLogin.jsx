@@ -26,7 +26,8 @@ export function AdminLogin() {
             data: {
                 username: username,
                 password: password
-=======
+            }
+        })
         try {
             setLoading(true);
             const response = await axios({
