@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
+import { cache } from "hono/cache";
 
 type Bindings = {
     DATABASE_URL: string,
@@ -8,8 +9,10 @@ type Bindings = {
 
 const schemeRouter = new Hono<{Bindings: Bindings}>()
 
-schemeRouter.get("/schemes", async (c) => {
-
+schemeRouter.get("/schemes", cache({
+    cacheName: "schemes",
+    cacheControl: "max-age=120"
+    }), async (c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate())
